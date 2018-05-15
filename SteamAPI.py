@@ -3,7 +3,7 @@ import urllib
 import urllib.parse
 import urllib.request
 
-
+# todo http通信がかかるので、try/exceptを使いたい
 class GetInfo:
     """
 
