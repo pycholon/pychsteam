@@ -3,8 +3,6 @@ import discord
 import top
 from environment import Env
 
-
-
 client = discord.Client()
 token = Env.DISCORD_TOKEN_1
 asyncio.set_event_loop(asyncio.new_event_loop())
@@ -16,8 +14,6 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('------')
-
-
 
 
 @client.event
@@ -65,13 +61,12 @@ def choice_ourgame(obj: top.GameList, categoryid=1) -> top.Game:
     agame.get_details()
     categories = getattr(agame, "categories")
     calist = [each for each in categories if each.get("id") == categoryid]
-
-
-
-
+    return calist
+    # todo sagoyutyuu
+    # todo filter関数について調べる
 
 myid = None
 mainplayer = None
-#mainplayer = top.MainPlayer(steamid=Env.MY_STEAM_ID)
+# mainplayer = top.MainPlayer(steamid=Env.MY_STEAM_ID)
 
 client.run(token)
